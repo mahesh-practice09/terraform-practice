@@ -1,7 +1,7 @@
-resource "aws_security_group" "allow_tls" {
+resource "aws_security_group" "demosg" {
   name        = var.sg_name
   description = var.sg_description
-  vpc_id      = "vpc-081b5fc7c35186264"
+  vpc_id      = var.vpc_id
 
 
   ingress {

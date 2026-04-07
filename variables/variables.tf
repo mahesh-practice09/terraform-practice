@@ -27,3 +27,8 @@ variable "sg_description" {
   type    = string
   default = "Allow TLS inbound traffic and all outbound traffic"
 }
+
+variable "vpc_id" {
+  type = string 
+  default = "vpc-081b5fc7c35186264"
+}
