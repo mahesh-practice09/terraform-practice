@@ -4,7 +4,7 @@ resource "aws_security_group" "allow_tls" {
   vpc_id      = "vpc-081b5fc7c35186264"
 
 
- ingress {
+  ingress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_tls" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
- egress {
+  egress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
