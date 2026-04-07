@@ -1,5 +1,5 @@
 variable "fruits_list" {
-  type = list 
+  type = list(string)
   default = ["apple","banana","orange","apple"]
 }
 
