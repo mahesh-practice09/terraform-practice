@@ -32,3 +32,4 @@ variable "vpc_id" {
   type = string 
   default = "vpc-081b5fc7c35186264"
 }
+
