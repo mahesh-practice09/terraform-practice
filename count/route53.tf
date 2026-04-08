@@ -18,6 +18,7 @@ resource "aws_route53_record" "frontend_records" {
   name    = "roboshop.${var.domain_name}" 
   type    = "A"
   ttl     = "1"
-  records = [ for i in aws_instance.demo : i.public_ip if i.tags["Name"] == "frontend" ] 
+  records = [aws_instance.demo[index(var.Instances,"frontend")].public_ip] 
+  #records = [ for i in aws_instance.demo : i.public_ip if i.tags["Name"] == "frontend" ] 
   allow_overwrite = true
 }
