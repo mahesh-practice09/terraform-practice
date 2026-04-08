@@ -4,7 +4,8 @@ resource "aws_security_group" "demosg" {
   vpc_id      = var.vpc_id
 
   dynamic ingress {
-    for_each = var.ingress_rules
+    # for_each = var.ingress_rules
+    for_each = toset(var.ingress_rules)
     content {
      from_port        = ingress.value.port
      to_port          = ingress.value.port
