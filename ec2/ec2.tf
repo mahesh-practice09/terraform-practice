@@ -10,7 +10,7 @@ resource "aws_instance" "demo" {
 }
 
 resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
+  name        = "terraform_sg_change"
   description = "Allow TLS inbound traffic and all outbound traffic"
   vpc_id      = "vpc-081b5fc7c35186264"
 
@@ -32,6 +32,11 @@ resource "aws_security_group" "allow_tls" {
   }
 
   tags = {
-    Name = "allow_tls_roboshop"
+    Name = "test_sg"
   }
+  
+   lifecycle {
+     create_before_destroy = true
+   }
+ 
 }
